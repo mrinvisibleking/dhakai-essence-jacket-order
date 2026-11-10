@@ -43,7 +43,7 @@ module.exports = async function handler(req, res) {
   const color = clean(order.color, 30);
   const quantity = Number(order.quantity);
   const shippingArea = clean(order.shippingArea, 30);
-  const unitPrice = 1450;
+  const unitPrice = 1550;
   const shippingFee = shippingArea === "Inside Dhaka" ? 60 : shippingArea === "Outside Dhaka" ? 120 : 0;
   if (customerName.length < 2 || !/^[0-9+()\\-\\s]{8,20}$/.test(phone) ||
       address.length < 8 || !ALLOWED_SIZES.has(size) || !ALLOWED_COLORS.has(color) ||
