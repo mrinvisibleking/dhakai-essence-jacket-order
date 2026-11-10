@@ -1,39 +1,47 @@
 # Noor Exclusive — Jacket Landing Page
 
-Responsive recreation of the Noor Exclusive Winter Half Zipper Jacket product/order page. Static frontend + Vercel serverless order endpoint + Google Apps Script receiver.
+Responsive Bengali product landing page for the Winter Half Zipper Style Jacket. It includes product color thumbnails, size guide, quantity and delivery-price calculation, and a Cash on Delivery order form.
 
-## 1. Create the Google Sheet
+## 1. Connect Google Sheets (required for order submissions)
 
-1. Create a new Google Sheet, for example `Noor Exclusive Orders`.
-2. Open **Extensions → Apps Script**.
-3. Replace the editor contents with `google-apps-script/Code.gs`.
-4. In Apps Script open **Project Settings → Script properties → Add script property**:
+1. Create a Google Sheet named **Noor Exclusive Orders**.
+2. In that sheet, open **Extensions → Apps Script**.
+3. Replace the editor contents with the code in `google-apps-script/Code.gs`.
+4. In Apps Script, open **Project Settings → Script properties** and add:
    - Property: `ORDER_SECRET`
-   - Value: create a long random string (at least 32 characters). Keep it private.
-5. Save the script.
-6. Choose **Deploy → New deployment → Web app**.
+   - Value: a long random secret (at least 32 characters). Keep it private.
+5. Save, then choose **Deploy → New deployment → Web app**.
    - Execute as: **Me**
    - Who has access: **Anyone**
-7. Deploy, authorize when prompted, and copy the Web app URL ending in `/exec`.
+6. Deploy, authorize access, and copy the web app URL ending in `/exec`.
 
-The `Orders` tab and header row are created automatically on the first valid order.
+The script creates an `Orders` tab and header row automatically when the first valid order arrives.
 
-## 2. Deploy with GitHub + Vercel
+## 2. Configure Vercel
 
-1. Create a new GitHub repository named `noor-exclusive-jacket-landing`.
-2. Upload the contents of this project to the repository root (not the containing folder).
-3. In Vercel choose **Add New → Project**, import the GitHub repository, and deploy.
-4. In Vercel **Project → Settings → Environment Variables**, add:
-   - `GOOGLE_APPS_SCRIPT_URL` = the Apps Script `/exec` URL
-   - `ORDER_SECRET` = the exact same secret saved in Apps Script
-5. Redeploy after adding the environment variables.
+This repository is `mrinvisibleking/dhakai-essence-jacket-order`.
 
-## 3. Test
+1. Open the Vercel project **dhakai-essence-jacket-order**.
+2. Go to **Settings → Environment Variables** and add both variables for **Production** (and Preview too if you want to test preview deployments):
+   - `GOOGLE_APPS_SCRIPT_URL` = the Apps Script web app URL ending in `/exec`
+   - `ORDER_SECRET` = exactly the same secret saved in Apps Script
+3. Redeploy after adding the variables.
 
-Open the deployed URL, submit a test order with your own details, then verify that a new row appears in the Google Sheet's `Orders` tab. Do not advertise the form until this test succeeds.
+The landing page itself works without these variables. Until they are configured, order submissions intentionally return a clear configuration message and are not falsely reported as successful.
 
-## Notes
+## 3. Test before sharing
 
-- Price is configured as BDT 1,450 per jacket; shipping is BDT 60 inside Dhaka and BDT 120 outside Dhaka.
-- Product photos currently load from the reference website's public image URLs. For long-term reliability, download and host licensed product photos in this repository.
-- Update product text, pricing, return policy, and social links before production if the seller's actual terms differ.
+1. Open the deployed site.
+2. Submit one test order using your own test details.
+3. Confirm the order appears in the Google Sheet's `Orders` tab.
+4. Only advertise the order form after this end-to-end test succeeds.
+
+## Product settings
+
+- Product: Winter Half Zipper Style Jacket
+- Unit price: BDT 1,450
+- Delivery: BDT 60 inside Dhaka; BDT 120 outside Dhaka
+- Available sizes: M, L, XL, XXL
+- Available colors: Black, Red, Pastel Green, Blue
+
+The product images currently load from public image URLs on the reference shop. For long-term reliability, use product images you own or are licensed to use.
