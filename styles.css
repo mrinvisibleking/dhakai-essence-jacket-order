@@ -149,3 +149,39 @@ footer {
 .detail-card {
   justify-content: center;
 }
+
+
+/* Order call-to-action in the product details section */
+.details-order-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:max-content;
+  max-width:100%;
+  margin:25px auto 0;
+  padding:14px 25px;
+  border-radius:6px;
+  background:#b51f32;
+  color:#fff;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:700;
+  line-height:1.5;
+  box-shadow:0 4px 12px #b51f3228;
+  transition:background .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.details-order-button:hover{
+  background:#97182a;
+  color:#fff;
+  transform:translateY(-2px);
+  box-shadow:0 7px 16px #b51f3233;
+}
+.details-order-button:focus-visible{
+  outline:3px solid #65c5e8;
+  outline-offset:3px;
+}
+.details-order-button span{font-size:21px;line-height:1}
+@media(max-width:760px){
+  .details-order-button{width:100%;padding:13px 15px;font-size:15px}
+}
