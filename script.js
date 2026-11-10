@@ -10,9 +10,7 @@ const galleryColors = ['Blue', 'Black', 'Red', 'Pastel Green'];
 function showGallery(index) {
   galleryIndex = (index + galleryColors.length) % galleryColors.length;
   const track = $('#gallery-track');
-  const mobile = window.matchMedia('(max-width: 760px)').matches;
-  const offset = mobile ? galleryIndex : Math.min(galleryIndex, 1);
-  track.style.transform = `translateX(-${offset * 25}%)`;
+  track.style.transform = `translateX(-${galleryIndex * 25}%)`;
   document.querySelectorAll('#gallery-dots button').forEach((dot, i) => dot.classList.toggle('active', i === galleryIndex));
 }
 
