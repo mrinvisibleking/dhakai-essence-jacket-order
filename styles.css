@@ -105,3 +105,15 @@ footer{text-align:center;padding:32px 15px 85px;background:#fff}footer>b{font:80
  .detail-card-wide{grid-column:auto}
  .details-bottom-note{font-size:13px;margin-top:19px}
 }
+
+/* Product size selector cards */
+.size-choice-field{grid-column:1/-1;min-width:0;margin:0;padding:0;border:0}
+.size-choice-field legend{font-size:15px;font-weight:600;margin-bottom:9px}
+.size-choice-field em{color:var(--red);font-style:normal}
+.size-choice-options{display:flex;flex-wrap:wrap;gap:10px}
+.size-choice-options label{cursor:pointer}
+.size-choice-options input{position:absolute;opacity:0;pointer-events:none}
+.size-choice-options span{display:grid;place-items:center;min-width:58px;height:45px;padding:0 13px;border:1px solid #d8d8d8;border-radius:4px;background:#fff;font:700 15px Roboto,Arial,sans-serif;transition:.2s}
+.size-choice-options input:checked+span{border:2px solid #b51f32;background:#fff7f7;color:#a7192c}
+.size-choice-options input:focus-visible+span{outline:3px solid #65c5e855;outline-offset:2px}
+@media(max-width:760px){.size-choice-field{grid-column:auto}.size-choice-options span{min-width:55px;height:43px}}
