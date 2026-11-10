@@ -1,4 +1,4 @@
-const PRICE = 1450;
+const PRICE = 1550;
 let quantity = 1;
 let galleryIndex = 0;
 const $ = (selector) => document.querySelector(selector);
