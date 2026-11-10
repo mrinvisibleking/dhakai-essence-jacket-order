@@ -3,58 +3,182 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#17231f">
   <title>অর্ডার কনফার্মেশন | Dhakai Essence</title>
+  <meta name="description" content="আপনার Dhakai Essence অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে।">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
-    *{box-sizing:border-box}body{margin:0;background:#f3f5f7;color:#20252b;font-family:'Hind Siliguri',sans-serif}.wrap{width:min(760px,calc(100% - 28px));margin:38px auto 60px}.brand{text-align:center;font:800 21px Roboto,Arial,sans-serif;letter-spacing:2px;margin-bottom:22px}.success{background:#fff;border-radius:12px;padding:30px 22px;text-align:center;box-shadow:0 8px 30px #1826380d}.check{width:58px;height:58px;display:grid;place-items:center;border-radius:50%;margin:0 auto 13px;background:#e8f7ed;color:#21834a;font:700 32px Arial}.success h1{font-size:27px;margin:0 0 8px;color:#1d7844}.success p{font-size:17px;line-height:1.7;margin:0;color:#515b66}.order-id{display:inline-block;margin-top:13px;padding:7px 14px;background:#f3f5f7;border-radius:6px;font-weight:700}.invoice{background:#fff;border-radius:12px;padding:25px 26px;margin-top:18px;box-shadow:0 8px 30px #1826380d}.invoice-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;border-bottom:1px solid #e8ebef;padding-bottom:16px}.invoice h2{margin:0;font-size:23px}.muted{color:#78828d;font-size:13px}.invoice-meta{text-align:right;font-size:13px}.section-title{font-size:17px;margin:18px 0 8px}.customer{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;font-size:14px}.customer p{margin:0;overflow-wrap:anywhere}.customer .wide{grid-column:1/-1}.items{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}.items th,.items td{padding:11px 7px;border-bottom:1px solid #edf0f2;text-align:left}.items th:last-child,.items td:last-child{text-align:right;white-space:nowrap}.totals{width:min(300px,100%);margin:13px 0 0 auto}.total-row{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-size:14px}.grand{border-top:1px solid #dfe4e8;margin-top:6px;padding-top:10px;font-size:18px;font-weight:700;color:#a7192c}.payment{margin-top:14px;padding:11px 13px;border-radius:6px;background:#f7f8fa;font-size:14px}.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px}.actions button,.actions a{border:0;border-radius:6px;padding:12px 20px;font:700 15px 'Hind Siliguri',sans-serif;text-decoration:none;cursor:pointer}.print{background:#a7192c;color:white}.home{background:#eef1f4;color:#303944}@media(max-width:520px){.wrap{margin-top:22px}.success{padding:24px 16px}.success h1{font-size:23px}.success p{font-size:15px}.invoice{padding:19px 15px}.invoice-head{flex-direction:column}.invoice-meta{text-align:left}.customer{grid-template-columns:1fr}.customer .wide{grid-column:auto}.items{font-size:12px}.items th,.items td{padding:9px 4px}}@media print{body{background:#fff}.wrap{width:100%;margin:0}.brand,.success,.actions{display:none!important}.invoice{margin:0;padding:0;box-shadow:none;border-radius:0}.invoice-head{padding-top:0}}
+    :root{--forest:#172b24;--forest-2:#244238;--gold:#c6a56b;--gold-soft:#f4eddf;--ink:#202722;--muted:#78817b;--line:#e9e8e2;--paper:#fff;--canvas:#f5f4ef;--green:#2d8055}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Hind Siliguri',sans-serif}
+    .page{width:min(780px,calc(100% - 30px));margin:0 auto;padding:30px 0 58px}
+    .topbar{display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+    .brand{display:flex;align-items:center;gap:11px;color:var(--forest);font:800 17px Roboto,Arial,sans-serif;letter-spacing:2.5px}
+    .brand-mark{width:37px;height:37px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%;color:var(--gold);font:700 18px Georgia,serif}
+    .success{position:relative;overflow:hidden;text-align:center;background:var(--forest);color:#fff;border-radius:18px;padding:35px 25px 30px;box-shadow:0 16px 40px #172b241c}
+    .success:before,.success:after{content:"";position:absolute;border:1px solid #c6a56b30;border-radius:50%;width:230px;height:230px;pointer-events:none}
+    .success:before{top:-155px;left:-105px}.success:after{right:-130px;bottom:-175px}
+    .success-inner{position:relative;z-index:1}
+    .success-kicker{color:#d9c39d;font:700 10px Roboto,Arial,sans-serif;letter-spacing:3px;margin-bottom:16px}
+    .check{width:65px;height:65px;display:grid;place-items:center;margin:0 auto 15px;border:1px solid #c6a56b;border-radius:50%;background:#ffffff0d;color:#e4c990;font:400 34px Arial,sans-serif}
+    .success h1{font-size:clamp(23px,4vw,30px);line-height:1.45;margin:0 0 8px;font-weight:700}
+    .success p{max-width:530px;margin:0 auto;color:#d4ddd7;font-size:15px;line-height:1.8}
+    .order-id{display:inline-flex;align-items:center;gap:7px;margin-top:19px;padding:8px 16px;border:1px solid #ffffff2b;border-radius:30px;background:#ffffff0b;color:#f2e5c9;font-size:14px;font-weight:600}
+    .order-id span{font-family:Roboto,Arial,sans-serif;letter-spacing:.4px}
+    .invoice{position:relative;margin-top:22px;padding:29px 31px 25px;background:var(--paper);border:1px solid #e9e6dc;border-radius:16px;box-shadow:0 12px 34px #172b240a}
+    .invoice-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding-bottom:21px;border-bottom:1px solid var(--line)}
+    .invoice-kicker{font:700 10px Roboto,Arial,sans-serif;letter-spacing:2px;color:var(--gold);margin-bottom:5px}
+    .invoice h2{margin:0;color:var(--forest);font-size:25px;line-height:1.3}
+    .invoice-sub{margin-top:5px;color:var(--muted);font-size:13px}
+    .invoice-meta{text-align:right;color:var(--muted);font:12px/1.8 Roboto,'Hind Siliguri',sans-serif}
+    .invoice-meta b{display:block;color:var(--forest);font-size:13px;overflow-wrap:anywhere}
+    .section-title{display:flex;align-items:center;gap:9px;margin:22px 0 11px;color:var(--forest);font-size:17px;font-weight:700}
+    .section-title:before{content:"";width:4px;height:19px;border-radius:4px;background:var(--gold)}
+    .customer{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:15px 16px;background:#faf9f6;border:1px solid #f0eee8;border-radius:10px;font-size:14px}
+    .customer p{margin:0;line-height:1.7;overflow-wrap:anywhere}
+    .customer b{color:#58635b;font-weight:600}
+    .customer .wide{grid-column:1/-1}
+    .items-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+    .items{width:100%;border-collapse:collapse;font-size:14px;min-width:420px}
+    .items th{background:#f8f7f2;color:#69736c;font-size:12px;font-weight:600}
+    .items th,.items td{padding:13px 11px;border-bottom:1px solid var(--line);text-align:left}
+    .items tbody tr:last-child td{border-bottom:0;color:var(--ink);font-weight:600}
+    .items th:last-child,.items td:last-child{text-align:right;white-space:nowrap}
+    .totals{width:min(310px,100%);margin:15px 0 0 auto}
+    .total-row{display:flex;justify-content:space-between;gap:12px;padding:6px 0;color:#69736c;font-size:14px}
+    .total-row b{color:var(--ink);font-weight:600;white-space:nowrap}
+    .total-row.grand{margin-top:8px;padding:13px 0 0;border-top:1px dashed #d9d6cb;color:var(--forest);font-size:17px;font-weight:700}
+    .total-row.grand b{color:var(--forest);font:800 21px Roboto,Arial,sans-serif}
+    .payment{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:21px}
+    .info-tile{padding:13px 14px;border:1px solid #eeeae0;border-radius:10px;background:#fcfbf8}
+    .info-label{display:block;margin-bottom:4px;color:#8a8d83;font-size:12px}
+    .info-value{display:block;color:var(--forest);font-size:14px;font-weight:700;line-height:1.5}
+    .cod-note{margin:17px 0 0;padding:12px 14px;border-radius:9px;background:var(--gold-soft);color:#655638;font-size:13px;line-height:1.7}
+    .actions{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin-top:22px}
+    .actions button,.actions a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:11px 21px;border:1px solid transparent;border-radius:8px;font:700 15px 'Hind Siliguri',sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
+    .actions button:hover,.actions a:hover{transform:translateY(-2px)}
+    .print{background:var(--forest);color:#fff}.print:hover{background:var(--forest-2)}
+    .home{background:#fff;color:var(--forest);border-color:#dcded7!important}
+    .footer-note{text-align:center;margin-top:22px;color:#8b918b;font-size:12px;line-height:1.8}
+    .footer-note strong{color:var(--forest);font:700 11px Roboto,Arial,sans-serif;letter-spacing:1.6px}
+    @media(max-width:560px){
+      .page{width:min(100% - 20px,780px);padding:18px 0 38px}
+      .topbar{margin-bottom:15px}.brand{font-size:15px}
+      .success{padding:29px 17px 25px;border-radius:14px}.success p{font-size:14px}
+      .invoice{padding:22px 16px 20px;margin-top:14px;border-radius:13px}
+      .invoice-head{gap:8px}.invoice h2{font-size:22px}.invoice-meta{font-size:11px}
+      .customer{grid-template-columns:1fr;gap:7px;padding:13px}.customer .wide{grid-column:auto}
+      .payment{grid-template-columns:1fr 1fr;gap:8px}.info-tile{padding:11px 10px}
+      .actions{gap:8px}.actions button,.actions a{flex:1 1 100%;min-height:46px}
+    }
+    @media print{
+      @page{size:A4;margin:13mm}
+      body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .page{width:100%;max-width:none;margin:0;padding:0}
+      .topbar,.success,.actions,.footer-note{display:none!important}
+      .invoice{margin:0;padding:18px 20px;border:1px solid #ddd;box-shadow:none;border-radius:0}
+      .invoice-head{padding-top:0}
+      .items-wrap{overflow:visible}
+      .items{min-width:0}
+    }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <div class="brand">DHAKAI ESSENCE</div>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">D</span><span>DHAKAI ESSENCE</span></div>
+    </header>
+
     <section class="success">
-      <div class="check" aria-hidden="true">✓</div>
-      <h1>ধন্যবাদ! আপনার অর্ডারটি গ্রহণ করা হয়েছে।</h1>
-      <p>কিছুক্ষণের মধ্যেই আমাদের পক্ষ থেকে আপনাকে কল করে আপনার অর্ডারটি কনফার্ম করা হবে। অনুগ্রহ করে ফোনটি সচল রাখুন।</p>
-      <div class="order-id">অর্ডার আইডি: <span id="order-id">—</span></div>
+      <div class="success-inner">
+        <div class="success-kicker">ORDER CONFIRMED</div>
+        <div class="check" aria-hidden="true">✓</div>
+        <h1>ধন্যবাদ! আপনার অর্ডারটি গ্রহণ করা হয়েছে।</h1>
+        <p>আপনার পছন্দের পণ্যটি অর্ডার করার জন্য ধন্যবাদ। আমাদের টিম কিছুক্ষণের মধ্যেই আপনাকে ফোন করে অর্ডারটি কনফার্ম করবে। অনুগ্রহ করে ফোনটি সচল রাখুন।</p>
+        <div class="order-id">অর্ডার আইডি: <span id="order-id">—</span></div>
+      </div>
     </section>
+
     <section class="invoice" id="invoice">
-      <div class="invoice-head"><div><h2>অর্ডার ইনভয়েস</h2><div class="muted">Dhakai Essence · Cash on Delivery</div></div><div class="invoice-meta"><b id="invoice-id">—</b><br><span id="invoice-date">—</span></div></div>
+      <div class="invoice-head">
+        <div>
+          <div class="invoice-kicker">YOUR PURCHASE SUMMARY</div>
+          <h2>অর্ডার ইনভয়েস</h2>
+          <div class="invoice-sub">Dhakai Essence · Cash on Delivery</div>
+        </div>
+        <div class="invoice-meta"><b id="invoice-id">—</b><span id="invoice-date">—</span></div>
+      </div>
+
       <h3 class="section-title">কাস্টমারের বিবরণ</h3>
-      <div class="customer"><p><b>নাম:</b> <span id="customer-name"></span></p><p><b>ফোন:</b> <span id="customer-phone"></span></p><p class="wide"><b>ঠিকানা:</b> <span id="customer-address"></span></p></div>
+      <div class="customer">
+        <p><b>নাম:</b> <span id="customer-name"></span></p>
+        <p><b>ফোন:</b> <span id="customer-phone"></span></p>
+        <p class="wide"><b>ঠিকানা:</b> <span id="customer-address"></span></p>
+      </div>
+
       <h3 class="section-title">অর্ডারের বিবরণ</h3>
-      <table class="items"><thead><tr><th>পণ্য</th><th>সাইজ / কালার</th><th>পরিমাণ</th><th>মূল্য</th></tr></thead><tbody><tr><td id="product"></td><td id="variant"></td><td id="qty"></td><td id="line-total"></td></tr></tbody></table>
-      <div class="totals"><div class="total-row"><span>সাবটোটাল</span><b id="subtotal"></b></div><div class="total-row"><span>ডেলিভারি চার্জ</span><b id="delivery"></b></div><div class="total-row grand"><span>সর্বমোট</span><b id="total"></b></div></div>
-      <div class="payment"><b>পেমেন্ট:</b> Cash on Delivery — পণ্য হাতে পেয়ে মূল্য পরিশোধ করবেন।<br><b>ডেলিভারি এলাকা:</b> <span id="shipping-area"></span></div>
+      <div class="items-wrap">
+        <table class="items">
+          <thead><tr><th>পণ্য</th><th>সাইজ / কালার</th><th>পরিমাণ</th><th>মূল্য</th></tr></thead>
+          <tbody><tr><td id="product"></td><td id="variant"></td><td id="qty"></td><td id="line-total"></td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="totals">
+        <div class="total-row"><span>সাবটোটাল</span><b id="subtotal"></b></div>
+        <div class="total-row"><span>ডেলিভারি চার্জ</span><b id="delivery"></b></div>
+        <div class="total-row grand"><span>সর্বমোট</span><b id="total"></b></div>
+      </div>
+
+      <div class="payment">
+        <div class="info-tile"><span class="info-label">পেমেন্ট পদ্ধতি</span><span class="info-value">Cash on Delivery</span></div>
+        <div class="info-tile"><span class="info-label">ডেলিভারি এলাকা</span><span class="info-value" id="shipping-area"></span></div>
+      </div>
+      <p class="cod-note">পণ্য হাতে পাওয়ার পর ডেলিভারি প্রতিনিধিকে মূল্য পরিশোধ করবেন। অর্ডার সংক্রান্ত প্রয়োজনে আমাদের টিম আপনার দেওয়া ফোন নম্বরে যোগাযোগ করবে।</p>
     </section>
-    <div class="actions"><button class="print" type="button" onclick="window.print()">ইনভয়েস প্রিন্ট / PDF সেভ করুন</button><a class="home" href="/">শপে ফিরে যান</a></div>
+
+    <div class="actions">
+      <button class="print" type="button" onclick="window.print()">ইনভয়েস প্রিন্ট / PDF সেভ করুন</button>
+      <a class="home" href="/">শপে ফিরে যান</a>
+    </div>
+    <div class="footer-note"><strong>DHAKAI ESSENCE</strong><br>আপনার কেনাকাটার জন্য ধন্যবাদ।</div>
   </main>
+
   <script>
     (function(){
       const raw = sessionStorage.getItem('dhakaiEssenceLastOrder');
       if (!raw) {
-        document.querySelector('.success').innerHTML = '<h1>অর্ডারের তথ্য পাওয়া যায়নি</h1><p>ইনভয়েস দেখতে অর্ডার করার পর পাওয়া confirmation page-এ ফিরে যান। প্রয়োজনে আমাদের সাথে যোগাযোগ করুন।</p>';
+        document.querySelector('.success').innerHTML = '<div class="success-inner"><h1>অর্ডারের তথ্য পাওয়া যায়নি</h1><p>ইনভয়েস দেখতে অর্ডার করার পর পাওয়া confirmation page-এ ফিরে যান। প্রয়োজনে আমাদের সাথে যোগাযোগ করুন।</p></div>';
         document.querySelector('.invoice').hidden = true;
+        document.querySelector('.actions').style.display = 'none';
         return;
       }
       let o;
       try { o = JSON.parse(raw); } catch(e) { o = null; }
       if (!o || !o.orderId) {
         document.querySelector('.invoice').hidden = true;
-        document.querySelector('.success').innerHTML = '<h1>ইনভয়েস লোড করা যায়নি</h1><p>দয়া করে অর্ডার পেইজ থেকে আবার চেষ্টা করুন।</p>';
+        document.querySelector('.success').innerHTML = '<div class="success-inner"><h1>ইনভয়েস লোড করা যায়নি</h1><p>দয়া করে অর্ডার পেইজ থেকে আবার চেষ্টা করুন।</p></div>';
+        document.querySelector('.actions').style.display = 'none';
         return;
       }
       const put=(id,value)=>document.getElementById(id).textContent=value ?? '';
       const money=v=>'৳'+new Intl.NumberFormat('bn-BD').format(Number(v)||0);
       const date=new Date(o.createdAt);
-      put('order-id',o.orderId);put('invoice-id','Invoice: '+o.orderId);
+      put('order-id',o.orderId);
+      put('invoice-id','Invoice: '+o.orderId);
       put('invoice-date',date.toLocaleString('bn-BD',{dateStyle:'medium',timeStyle:'short'}));
-      put('customer-name',o.customerName);put('customer-phone',o.phone);put('customer-address',o.address);
-      put('product',o.product);put('variant',o.size+' / '+o.color);put('qty',new Intl.NumberFormat('bn-BD').format(o.quantity));
-      put('line-total',money(o.subtotal));put('subtotal',money(o.subtotal));put('delivery',money(o.shippingFee));put('total',money(o.total));
+      put('customer-name',o.customerName);
+      put('customer-phone',o.phone);
+      put('customer-address',o.address);
+      put('product',o.product);
+      put('variant',o.size+' / '+o.color);
+      put('qty',new Intl.NumberFormat('bn-BD').format(o.quantity));
+      put('line-total',money(o.subtotal));
+      put('subtotal',money(o.subtotal));
+      put('delivery',money(o.shippingFee));
+      put('total',money(o.total));
       put('shipping-area',o.shippingArea==='Inside Dhaka'?'ঢাকার ভিতরে':'ঢাকার বাইরে');
     })();
   </script>
