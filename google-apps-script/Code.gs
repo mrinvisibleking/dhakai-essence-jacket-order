@@ -29,7 +29,7 @@ function doPost(e) {
     }
 
     var quantity = Number(data.quantity);
-    var unitPrice = 1450;
+    var unitPrice = 1550;
     var shippingFee = data.shippingArea === "Inside Dhaka" ? 60 :
       data.shippingArea === "Outside Dhaka" ? 120 : 0;
 
