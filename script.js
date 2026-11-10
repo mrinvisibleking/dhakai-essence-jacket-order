@@ -1,9 +1,21 @@
 const PRICE = 1450;
 let quantity = 1;
+let galleryIndex = 0;
 const $ = (selector) => document.querySelector(selector);
 const money = (value) => `৳${new Intl.NumberFormat('bn-BD').format(value)}`;
 const selectedColor = () => document.querySelector('input[name="color"]:checked')?.value || 'Black';
 const shippingFee = () => $('#shipping').value === 'inside' ? 60 : 120;
+const galleryColors = ['Blue', 'Black', 'Red', 'Pastel Green'];
+
+function showGallery(index) {
+  galleryIndex = (index + galleryColors.length) % galleryColors.length;
+  const track = $('#gallery-track');
+  const mobile = window.matchMedia('(max-width: 760px)').matches;
+  track.style.transform = mobile
+    ? `translateX(-${galleryIndex * 100}%)`
+    : `translateX(-${galleryIndex * 33.333333}%)`;
+  document.querySelectorAll('#gallery-dots button').forEach((dot, i) => dot.classList.toggle('active', i === galleryIndex));
+}
 
 function updateTotals() {
   const subtotal = PRICE * quantity;
@@ -19,20 +31,14 @@ function updateTotals() {
 }
 
 function syncGalleryToColor(color) {
-  const thumb = [...document.querySelectorAll('.thumb')].find((item) => item.dataset.color === color);
-  if (!thumb) return;
-  $('#main-image').src = thumb.dataset.image;
-  $('#main-image').alt = `${color} Winter Half Zipper Jacket`;
-  document.querySelectorAll('.thumb').forEach((item) => item.classList.toggle('active', item === thumb));
+  const index = galleryColors.indexOf(color);
+  if (index >= 0) showGallery(index);
 }
 
-document.querySelectorAll('.thumb').forEach((button) => button.addEventListener('click', () => {
-  syncGalleryToColor(button.dataset.color);
-  const radio = document.querySelector(`input[name="color"][value="${CSS.escape(button.dataset.color)}"]`);
-  if (radio) radio.checked = true;
-  updateTotals();
-}));
-
+$('#gallery-prev').addEventListener('click', () => showGallery(galleryIndex - 1));
+$('#gallery-next').addEventListener('click', () => showGallery(galleryIndex + 1));
+document.querySelectorAll('#gallery-dots button').forEach((dot) => dot.addEventListener('click', () => showGallery(Number(dot.dataset.slide))));
+window.addEventListener('resize', () => showGallery(galleryIndex));
 document.querySelectorAll('input[name="color"]').forEach((radio) => radio.addEventListener('change', () => {
   syncGalleryToColor(radio.value);
   updateTotals();
@@ -105,4 +111,5 @@ $('#order-form').addEventListener('submit', async (event) => {
   }
 });
 
+showGallery(0);
 updateTotals();
