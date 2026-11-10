@@ -1,5 +1,5 @@
 /**
- * Noor Exclusive order receiver.
+ * Dhakai Essence order receiver.
  * Bind this Apps Script project to the Google Sheet via Extensions > Apps Script.
  * Store ORDER_SECRET in Project Settings > Script properties.
  */
