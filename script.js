@@ -11,9 +11,8 @@ function showGallery(index) {
   galleryIndex = (index + galleryColors.length) % galleryColors.length;
   const track = $('#gallery-track');
   const mobile = window.matchMedia('(max-width: 760px)').matches;
-  track.style.transform = mobile
-    ? `translateX(-${galleryIndex * 100}%)`
-    : `translateX(-${galleryIndex * 33.333333}%)`;
+  const offset = mobile ? galleryIndex : Math.min(galleryIndex, 1);
+  track.style.transform = `translateX(-${offset * 25}%)`;
   document.querySelectorAll('#gallery-dots button').forEach((dot, i) => dot.classList.toggle('active', i === galleryIndex));
 }
 
