@@ -108,5 +108,5 @@ $('#order-form').addEventListener('submit', async (event) => {
   }
 });
 
-showGallery(0);
+syncGalleryToColor(selectedColor());
 updateTotals();
