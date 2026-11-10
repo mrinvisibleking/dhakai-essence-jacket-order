@@ -127,3 +127,25 @@ footer{text-align:center;padding:32px 15px 85px;background:#fff}footer>b{font:80
 .gallery-dots button img{object-fit:contain;object-position:center}
 .color-image{background:#f5f5f5}
 .color-image img{object-fit:contain;object-position:center}
+
+
+/* Center all product/design copy while keeping the order form layout unchanged */
+.features-band,
+.features-band h2,
+.feature-copy,
+.feature-copy p,
+.size-guide,
+.size-guide h2,
+.size-table th,
+.size-table td,
+.details-heading,
+.details-heading > h2,
+.details-heading > p,
+.detail-card,
+.details-bottom-note,
+footer {
+  text-align: center;
+}
+.detail-card {
+  justify-content: center;
+}
