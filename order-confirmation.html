@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>অর্ডার কনফার্মেশন | Dhakai Essence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f3f5f7;color:#20252b;font-family:'Hind Siliguri',sans-serif}.wrap{width:min(760px,calc(100% - 28px));margin:38px auto 60px}.brand{text-align:center;font:800 21px Roboto,Arial,sans-serif;letter-spacing:2px;margin-bottom:22px}.success{background:#fff;border-radius:12px;padding:30px 22px;text-align:center;box-shadow:0 8px 30px #1826380d}.check{width:58px;height:58px;display:grid;place-items:center;border-radius:50%;margin:0 auto 13px;background:#e8f7ed;color:#21834a;font:700 32px Arial}.success h1{font-size:27px;margin:0 0 8px;color:#1d7844}.success p{font-size:17px;line-height:1.7;margin:0;color:#515b66}.order-id{display:inline-block;margin-top:13px;padding:7px 14px;background:#f3f5f7;border-radius:6px;font-weight:700}.invoice{background:#fff;border-radius:12px;padding:25px 26px;margin-top:18px;box-shadow:0 8px 30px #1826380d}.invoice-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;border-bottom:1px solid #e8ebef;padding-bottom:16px}.invoice h2{margin:0;font-size:23px}.muted{color:#78828d;font-size:13px}.invoice-meta{text-align:right;font-size:13px}.section-title{font-size:17px;margin:18px 0 8px}.customer{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;font-size:14px}.customer p{margin:0;overflow-wrap:anywhere}.customer .wide{grid-column:1/-1}.items{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}.items th,.items td{padding:11px 7px;border-bottom:1px solid #edf0f2;text-align:left}.items th:last-child,.items td:last-child{text-align:right;white-space:nowrap}.totals{width:min(300px,100%);margin:13px 0 0 auto}.total-row{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-size:14px}.grand{border-top:1px solid #dfe4e8;margin-top:6px;padding-top:10px;font-size:18px;font-weight:700;color:#a7192c}.payment{margin-top:14px;padding:11px 13px;border-radius:6px;background:#f7f8fa;font-size:14px}.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px}.actions button,.actions a{border:0;border-radius:6px;padding:12px 20px;font:700 15px 'Hind Siliguri',sans-serif;text-decoration:none;cursor:pointer}.print{background:#a7192c;color:white}.home{background:#eef1f4;color:#303944}@media(max-width:520px){.wrap{margin-top:22px}.success{padding:24px 16px}.success h1{font-size:23px}.success p{font-size:15px}.invoice{padding:19px 15px}.invoice-head{flex-direction:column}.invoice-meta{text-align:left}.customer{grid-template-columns:1fr}.customer .wide{grid-column:auto}.items{font-size:12px}.items th,.items td{padding:9px 4px}}@media print{body{background:#fff}.wrap{width:100%;margin:0}.brand,.success,.actions{display:none!important}.invoice{margin:0;padding:0;box-shadow:none;border-radius:0}.invoice-head{padding-top:0}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="brand">DHAKAI ESSENCE</div>
+    <section class="success">
+      <div class="check" aria-hidden="true">✓</div>
+      <h1>ধন্যবাদ! আপনার অর্ডারটি গ্রহণ করা হয়েছে।</h1>
+      <p>কিছুক্ষণের মধ্যেই আমাদের পক্ষ থেকে আপনাকে কল করে আপনার অর্ডারটি কনফার্ম করা হবে। অনুগ্রহ করে ফোনটি সচল রাখুন।</p>
+      <div class="order-id">অর্ডার আইডি: <span id="order-id">—</span></div>
+    </section>
+    <section class="invoice" id="invoice">
+      <div class="invoice-head"><div><h2>অর্ডার ইনভয়েস</h2><div class="muted">Dhakai Essence · Cash on Delivery</div></div><div class="invoice-meta"><b id="invoice-id">—</b><br><span id="invoice-date">—</span></div></div>
+      <h3 class="section-title">কাস্টমারের বিবরণ</h3>
+      <div class="customer"><p><b>নাম:</b> <span id="customer-name"></span></p><p><b>ফোন:</b> <span id="customer-phone"></span></p><p class="wide"><b>ঠিকানা:</b> <span id="customer-address"></span></p></div>
+      <h3 class="section-title">অর্ডারের বিবরণ</h3>
+      <table class="items"><thead><tr><th>পণ্য</th><th>সাইজ / কালার</th><th>পরিমাণ</th><th>মূল্য</th></tr></thead><tbody><tr><td id="product"></td><td id="variant"></td><td id="qty"></td><td id="line-total"></td></tr></tbody></table>
+      <div class="totals"><div class="total-row"><span>সাবটোটাল</span><b id="subtotal"></b></div><div class="total-row"><span>ডেলিভারি চার্জ</span><b id="delivery"></b></div><div class="total-row grand"><span>সর্বমোট</span><b id="total"></b></div></div>
+      <div class="payment"><b>পেমেন্ট:</b> Cash on Delivery — পণ্য হাতে পেয়ে মূল্য পরিশোধ করবেন।<br><b>ডেলিভারি এলাকা:</b> <span id="shipping-area"></span></div>
+    </section>
+    <div class="actions"><button class="print" type="button" onclick="window.print()">ইনভয়েস প্রিন্ট / PDF সেভ করুন</button><a class="home" href="/">শপে ফিরে যান</a></div>
+  </main>
+  <script>
+    (function(){
+      const raw = sessionStorage.getItem('dhakaiEssenceLastOrder');
+      if (!raw) {
+        document.querySelector('.success').innerHTML = '<h1>অর্ডারের তথ্য পাওয়া যায়নি</h1><p>ইনভয়েস দেখতে অর্ডার করার পর পাওয়া confirmation page-এ ফিরে যান। প্রয়োজনে আমাদের সাথে যোগাযোগ করুন।</p>';
+        document.querySelector('.invoice').hidden = true;
+        return;
+      }
+      let o;
+      try { o = JSON.parse(raw); } catch(e) { o = null; }
+      if (!o || !o.orderId) {
+        document.querySelector('.invoice').hidden = true;
+        document.querySelector('.success').innerHTML = '<h1>ইনভয়েস লোড করা যায়নি</h1><p>দয়া করে অর্ডার পেইজ থেকে আবার চেষ্টা করুন।</p>';
+        return;
+      }
+      const put=(id,value)=>document.getElementById(id).textContent=value ?? '';
+      const money=v=>'৳'+new Intl.NumberFormat('bn-BD').format(Number(v)||0);
+      const date=new Date(o.createdAt);
+      put('order-id',o.orderId);put('invoice-id','Invoice: '+o.orderId);
+      put('invoice-date',date.toLocaleString('bn-BD',{dateStyle:'medium',timeStyle:'short'}));
+      put('customer-name',o.customerName);put('customer-phone',o.phone);put('customer-address',o.address);
+      put('product',o.product);put('variant',o.size+' / '+o.color);put('qty',new Intl.NumberFormat('bn-BD').format(o.quantity));
+      put('line-total',money(o.subtotal));put('subtotal',money(o.subtotal));put('delivery',money(o.shippingFee));put('total',money(o.total));
+      put('shipping-area',o.shippingArea==='Inside Dhaka'?'ঢাকার ভিতরে':'ঢাকার বাইরে');
+    })();
+  </script>
+</body>
+</html>
