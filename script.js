@@ -5,7 +5,7 @@ const $ = (selector) => document.querySelector(selector);
 const money = (value) => `৳${new Intl.NumberFormat('bn-BD').format(value)}`;
 const selectedColor = () => document.querySelector('input[name="color"]:checked')?.value || 'Black';
 const shippingFee = () => $('#shipping').value === 'inside' ? 60 : 120;
-const galleryColors = ['Blue', 'Black', 'Red', 'Pastel Green'];
+const galleryColors = ['Cream', 'Black', 'Red', 'Pastel Green'];
 
 function showGallery(index) {
   galleryIndex = (index + galleryColors.length) % galleryColors.length;
