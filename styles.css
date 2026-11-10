@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap');
 :root{--ink:#111;--muted:#5f6872;--red:#a10e0e;--green:#5dcc70;--blue:#65c5e8;--gray:#eff1f4;--line:#dedede}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:20px}
@@ -184,4 +184,14 @@ footer {
 .details-order-button span{font-size:21px;line-height:1}
 @media(max-width:760px){
   .details-order-button{width:100%;padding:13px 15px;font-size:15px}
+}
+
+
+/* Improve readability of Bengali delivery-area options and shipping prices */
+.form-grid select[name="shipping"],
+.form-grid select[name="shipping"] option {
+  font-family: 'Noto Sans Bengali', 'Hind Siliguri', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: lining-nums;
 }
