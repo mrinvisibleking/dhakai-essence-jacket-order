@@ -55,7 +55,7 @@
     .info-tile{padding:13px 14px;border:1px solid #e4edf2;border-radius:10px;background:#f8fbfd}
     .info-label{display:block;margin-bottom:4px;color:#8a8d83;font-size:12px}
     .info-value{display:block;color:var(--forest);font-size:14px;font-weight:700;line-height:1.5}
-    .cod-note{margin:17px 0 0;padding:12px 14px;border-radius:9px;background:var(--gold-soft);color:#655638;font-size:13px;line-height:1.7}
+    .cod-note{margin:19px 0 0;padding:17px 18px;border:1px solid #a9dedb;border-left:5px solid #168b83;border-radius:12px;background:linear-gradient(135deg,#effbfa 0%,#f7fbff 100%);color:#203b50;font-size:14px;line-height:1.8;box-shadow:0 7px 20px #123c6010}.cod-note-heading{display:flex;align-items:center;gap:9px;margin-bottom:8px;color:#123b58;font-size:15px}.cod-note-icon{display:grid;place-items:center;flex:0 0 25px;width:25px;height:25px;border-radius:50%;background:#168b83;color:#fff;font:700 14px Arial,sans-serif}.cod-note p{margin:0 0 12px}.cod-contact{display:flex;flex-wrap:wrap;align-items:center;gap:5px 9px;padding:11px 12px;border:1px solid #c8e7e4;border-radius:9px;background:#fff}.cod-contact span{flex:1 1 100%;font-size:13px;color:#506578}.cod-contact a{color:#087f79;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:.2px}.cod-contact a:hover{text-decoration:underline}.cod-contact small{padding:3px 8px;border-radius:20px;background:#e4f5f3;color:#126b68;font-size:12px;font-weight:700}
     .actions{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin-top:22px}
     .actions button,.actions a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:11px 21px;border:1px solid transparent;border-radius:8px;font:700 15px 'Noto Sans Bengali',sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
     .actions button:hover,.actions a:hover{transform:translateY(-2px)}
@@ -135,7 +135,11 @@
         <div class="info-tile"><span class="info-label">পেমেন্ট পদ্ধতি</span><span class="info-value">Cash on Delivery</span></div>
         <div class="info-tile"><span class="info-label">ডেলিভারি এলাকা</span><span class="info-value" id="shipping-area"></span></div>
       </div>
-      <p class="cod-note">পণ্য হাতে পাওয়ার পর ডেলিভারি প্রতিনিধিকে মূল্য পরিশোধ করবেন। অর্ডার নিশ্চিত করতে আমাদের টিম আপনার দেওয়া ফোন নম্বরে যোগাযোগ করবে।</p>
+      <div class="cod-note" role="note" aria-label="ডেলিভারি ও যোগাযোগ সংক্রান্ত গুরুত্বপূর্ণ তথ্য">
+        <div class="cod-note-heading"><span class="cod-note-icon" aria-hidden="true">✓</span><strong>ডেলিভারি ও যোগাযোগ সংক্রান্ত গুরুত্বপূর্ণ তথ্য</strong></div>
+        <p>ডেলিভারি ম্যানের সামনে প্রোডাক্ট দেখে বুঝে নিয়ে সম্পূর্ণ মূল্য পরিশোধ করুন।</p>
+        <div class="cod-contact"><span>অর্ডার সম্পর্কিত যেকোনো জিজ্ঞাসা বা পরিবর্তনের জন্য কল করুন:</span><a href="tel:01841809660">📞 01841-809660</a><small>সকাল ১০টা - রাত ১০টা</small></div>
+      </div>
     </section>
 
     <div class="actions">
