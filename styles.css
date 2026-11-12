@@ -6,8 +6,8 @@ body{margin:0;color:var(--ink);background:#fff;font-family:'Hind Siliguri',Arial
 .page-shell{width:100%;max-width:1635px;margin:0 auto}
 .hero-gallery{background:#fff;padding:10px 14% 18px}
 .gallery-window{position:relative;overflow:hidden;width:100%;height:min(42vw,570px);min-height:340px}
-.gallery-track{display:flex;width:400%;height:100%;transition:transform .45s ease;will-change:transform}
-.gallery-slide{position:relative;flex:0 0 25%;height:100%;margin:0;padding:0 1px;overflow:hidden}
+.gallery-track{display:flex;width:200%;height:100%;transition:transform .45s ease;will-change:transform}
+.gallery-slide{position:relative;flex:0 0 50%;height:100%;margin:0;padding:0 1px;overflow:hidden}
 .gallery-slide img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 22%;border:1px solid #d7d7d7}
 .gallery-slide figcaption{position:absolute;left:10px;bottom:10px;background:#0008;color:#fff;padding:3px 8px;border-radius:2px;font:12px Arial,sans-serif;opacity:0;transition:opacity .2s}
 .gallery-slide:hover figcaption{opacity:1}
@@ -74,7 +74,7 @@ body{margin:0;color:var(--ink);background:#fff;font-family:'Hind Siliguri',Arial
 footer{text-align:center;padding:32px 15px 85px;background:#fff}footer>b{font:800 22px Roboto,Arial,sans-serif;letter-spacing:2px}footer p{margin:7px 0;color:#777;font-size:18px}footer small{color:#999;font:13px Roboto,Arial,sans-serif}
 .mobile-order-bar{display:none}
 @media(max-width:760px){
- .hero-gallery{padding:8px 0 12px}.gallery-track{width:400%}.gallery-slide{flex-basis:25%;padding:0}.gallery-window{height:118vw;min-height:0;max-height:620px}.gallery-slide img{object-position:center 20%}.gallery-arrow{width:32px;height:42px;font-size:32px}
+ .hero-gallery{padding:8px 0 12px}.gallery-track{width:200%}.gallery-slide{flex-basis:50%;padding:0}.gallery-window{height:118vw;min-height:0;max-height:620px}.gallery-slide img{object-position:center 20%}.gallery-arrow{width:32px;height:42px;font-size:32px}
  .product-title-band{padding:24px 13px 27px}.product-title-band h1{font-size:25px}.headline-price{font-size:29px}.product-title-band h2{font-size:20px}.product-subtitle{font-size:19px;margin-bottom:20px}.reference-button{min-width:185px;min-height:55px;font-size:18px}
  .features-band{padding:22px 14px 38px;min-height:235px}.features-band h2{font-size:17px;margin-bottom:58px}.feature-copy{font-size:16px}
  .size-band{padding:24px 12px}.size-guide{padding:15px 8px 18px}.size-guide h2,.details-band>h2{font-size:27px;margin-bottom:25px}.size-table{font-size:14px}.size-table th{height:75px}.size-table td,.size-table th{padding:11px 8px}
