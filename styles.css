@@ -356,3 +356,57 @@ button, input, textarea, select { max-width:100%; }
   }
   a.mobile-order-bar strong { font-size:14px !important; }
 }
+
+/* Final viewport and responsive safeguards */
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body, .page-shell {
+  width: 100%;
+  max-width: 100%;
+  min-width: 320px;
+}
+body { overflow-x: clip; }
+@media (max-width: 760px) {
+  .page-shell,
+  .hero-gallery,
+  .product-title-band,
+  .size-band,
+  .details-band,
+  .order-section,
+  footer {
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero-gallery,
+  .product-title-band,
+  .size-band,
+  .details-band,
+  .order-section {
+    min-width: 0;
+  }
+  .gallery-window,
+  .gallery-dots,
+  .order-card,
+  .details-wrap,
+  .details-grid,
+  .form-grid {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .gallery-slide,
+  .detail-card,
+  .form-grid > *,
+  .summary,
+  .summary-row {
+    min-width: 0;
+  }
+  .gallery-slide img,
+  .color-image img {
+    max-width: 100%;
+  }
+}
