@@ -18,7 +18,7 @@ function updateTotals() {
   const total = subtotal + shippingFee();
   $('#quantity').textContent = quantity;
   const colorLabels = { Black: 'Classic Black', Red: 'Deep Maroon' };
-  $('#summary-product').textContent = `Jacket Model - 1 (${colorLabels[selectedColor()] || selectedColor()}) × ${quantity}`;
+  $('#summary-product').textContent = `GUESS Exclusive Jacket (${colorLabels[selectedColor()] || selectedColor()}) × ${quantity}`;
   $('#subtotal').textContent = money(subtotal);
   $('#subtotal2').textContent = money(subtotal);
   $('#shipping-cost').textContent = money(shippingFee());
