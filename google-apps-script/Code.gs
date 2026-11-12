@@ -14,12 +14,10 @@ function doPost(e) {
     // Normalize color text so every displayed option is accepted consistently.
     var rawColor = String(data.color || "").trim().toLowerCase();
     var colorMap = {
-      "black": "Black",
-      "red": "Red",
-      "pastel green": "Pastel Green",
-      "cream": "Cream",
-      "off white": "Cream",
-      "off-white": "Cream"
+      "black": "Classic Black",
+      "classic black": "Classic Black",
+      "red": "Deep Maroon",
+      "deep maroon": "Deep Maroon"
     };
     var color = colorMap[rawColor] || "";
 
