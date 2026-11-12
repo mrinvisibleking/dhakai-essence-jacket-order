@@ -698,3 +698,21 @@ body { overflow-x: clip; }
     font-size: 16px;
   }
 }
+
+
+/* Red rounded order button inside the size guide only */
+.size-guide > .reference-button {
+  border-radius: 999px;
+  background: linear-gradient(135deg, #c62828 0%, #e53935 55%, #b71c1c 100%);
+  box-shadow: 0 7px 18px rgba(198, 40, 40, .22);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.size-guide > .reference-button:hover {
+  background: linear-gradient(135deg, #a7191e 0%, #c62828 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(183, 28, 28, .3);
+}
+.size-guide > .reference-button:focus-visible {
+  outline: 3px solid #f4b942;
+  outline-offset: 4px;
+}
