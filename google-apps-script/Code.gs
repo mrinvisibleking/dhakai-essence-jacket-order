@@ -4,9 +4,9 @@
  * Store ORDER_SECRET in Project Settings > Script properties.
  */
 var ORDER_HEADERS = [
-  "Date", "Order Id", "Status", "Support Manager", "Summary", "Courier ID",
-  "Product Name", "Color", "Size", "Customer Name", "Phone", "Address",
-  "Quantity", "Price Amount", "shipping method", "Payment Method"
+  "Date", "Order Id", "Note", "Support Manager", "Status", "Consignment ID",
+  "Product Name", "Size", "Customer Name", "Phone", "Address", "Price Amount",
+  "Qty", "Price Change", "shipping method", "Payment Method"
 ];
 
 function doPost(e) {
@@ -60,19 +60,10 @@ function doPost(e) {
       var totalAmount = unitPrice * quantity + shippingFee;
 
       sheet.appendRow([
-        createdAt,
-        safe(data.orderId),
-        "", "", "", "",
-        safe(productName),
-        safe(color),
-        safe(data.size),
-        safe(data.customerName),
-        safe(data.phone),
-        safe(data.address),
-        quantity,
-        totalAmount,
-        safe(shippingMethod),
-        "Cash on Delivery"
+        createdAt, safe(data.orderId), "", "", "", "",
+        safe(productName), safe(data.size), safe(data.customerName),
+        safe(data.phone), safe(data.address), totalAmount, quantity, "",
+        safe(shippingMethod), "Cash on Delivery"
       ]);
 
       return jsonOutput({ success: true, orderId: data.orderId });
@@ -97,46 +88,48 @@ function doPost(e) {
 function ensureOrderSheetSchema(sheet) {
   var lastRow = sheet.getLastRow();
   var lastColumn = sheet.getLastColumn();
-
   if (lastRow === 0 || lastColumn === 0) {
     sheet.getRange(1, 1, 1, ORDER_HEADERS.length).setValues([ORDER_HEADERS]);
     sheet.setFrozenRows(1);
     return;
   }
-
-  var currentHeaders = sheet.getRange(1, 1, 1, lastColumn).getDisplayValues()[0]
+  var headers = sheet.getRange(1, 1, 1, lastColumn).getDisplayValues()[0]
     .map(function(value) { return String(value).trim(); });
-  if (currentHeaders.join("|") === ORDER_HEADERS.join("|")) {
+  if (headers.join("|") === ORDER_HEADERS.join("|")) {
     sheet.setFrozenRows(1);
     return;
   }
-
-  var oldHeaders = [
+  var previousHeaders = [
+    "Date", "Order Id", "Status", "Support Manager", "Summary", "Courier ID",
+    "Product Name", "Color", "Size", "Customer Name", "Phone", "Address",
+    "Quantity", "Price Amount", "shipping method", "Payment Method"
+  ];
+  var originalHeaders = [
     "Order ID", "Date & Time", "Customer Name", "Phone", "Address",
     "Delivery Area", "Delivery Fee (BDT)", "Size", "Color", "Quantity",
     "Unit Price (BDT)", "Subtotal (BDT)", "Total (BDT)", "Payment Method", "Product"
   ];
-  if (currentHeaders.join("|") !== oldHeaders.join("|")) {
+  var rows, migrated;
+  if (headers.join("|") === previousHeaders.join("|")) {
+    rows = lastRow > 1 ? sheet.getRange(2, 1, lastRow - 1, previousHeaders.length).getValues() : [];
+    migrated = rows.map(function(r) {
+      return [r[0], r[1], r[4] || "", r[3] || "", r[2] || "", r[5] || "",
+        r[6] || "GUESS Exclusive Jacket", r[8], r[9], r[10], r[11],
+        r[13], r[12], "", r[14], r[15]];
+    });
+  } else if (headers.join("|") === originalHeaders.join("|")) {
+    rows = lastRow > 1 ? sheet.getRange(2, 1, lastRow - 1, originalHeaders.length).getValues() : [];
+    migrated = rows.map(function(r) {
+      return [r[1], r[0], "", "", "", "", "GUESS Exclusive Jacket",
+        r[7], r[2], r[3], r[4], r[12], r[9], "",
+        r[5] === "Inside Dhaka" ? "ঢাকার ভিতরে" : "ঢাকার বাহিরে", r[13]];
+    });
+  } else {
     throw new Error("Orders sheet has an unrecognized header layout. No sheet data was changed.");
   }
-
-  var oldRows = lastRow > 1
-    ? sheet.getRange(2, 1, lastRow - 1, oldHeaders.length).getValues()
-    : [];
-  var migratedRows = oldRows.map(function(row) {
-    return [
-      row[1], row[0], "", "", "", "",
-      "GUESS Exclusive Jacket", row[8] === "Black" ? "Classic Black" : row[8] === "Red" ? "Deep Maroon" : row[8], row[7], row[2], row[3], row[4],
-      row[9], row[12], row[5] === "Inside Dhaka" ? "ঢাকার ভিতরে" : "ঢাকার বাহিরে",
-      row[13]
-    ];
-  });
-
   sheet.clearContents();
   sheet.getRange(1, 1, 1, ORDER_HEADERS.length).setValues([ORDER_HEADERS]);
-  if (migratedRows.length) {
-    sheet.getRange(2, 1, migratedRows.length, ORDER_HEADERS.length).setValues(migratedRows);
-  }
+  if (migrated.length) sheet.getRange(2, 1, migrated.length, ORDER_HEADERS.length).setValues(migrated);
   sheet.setFrozenRows(1);
 }
 
