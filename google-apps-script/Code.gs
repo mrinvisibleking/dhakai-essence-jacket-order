@@ -126,7 +126,7 @@ function ensureOrderSheetSchema(sheet) {
   var migratedRows = oldRows.map(function(row) {
     return [
       row[1], row[0], "", "", "", "",
-      "GUESS Exclusive Jacket", row[8], row[7], row[2], row[3], row[4],
+      "GUESS Exclusive Jacket", row[8] === "Black" ? "Classic Black" : row[8] === "Red" ? "Deep Maroon" : row[8], row[7], row[2], row[3], row[4],
       row[9], row[12], row[5] === "Inside Dhaka" ? "ঢাকার ভিতরে" : "ঢাকার বাহিরে",
       row[13]
     ];
