@@ -8,41 +8,41 @@
   <meta name="description" content="আপনার Dhakai Essence অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে।">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--forest:#a7192c;--forest-2:#851426;--gold:#c6283d;--gold-soft:#fff0f1;--ink:#252525;--muted:#747474;--line:#ece7e8;--paper:#fff;--canvas:#f7f7f8;--green:#b51f32}
+    :root{--forest:#142b4a;--forest-2:#0d2038;--gold:#16a6a1;--gold-soft:#e9f8f7;--ink:#172536;--muted:#68798b;--line:#e3eaf0;--paper:#fff;--canvas:#f3f7fb;--green:#168b83}
     *{box-sizing:border-box}
-    body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Hind Siliguri',sans-serif}
+    body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Noto Sans Bengali',sans-serif}
     .page{width:min(780px,calc(100% - 30px));margin:0 auto;padding:30px 0 58px}
     .topbar{display:flex;align-items:center;justify-content:center;margin-bottom:22px}
-    .brand{display:flex;align-items:center;gap:11px;color:var(--forest);font:800 17px Roboto,Arial,sans-serif;letter-spacing:2.5px}
-    .brand-mark{width:37px;height:37px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%;color:var(--gold);font:700 18px Georgia,serif}
-    .success{position:relative;overflow:hidden;text-align:center;background:linear-gradient(135deg,#9f1428 0%,#c6283d 58%,#df4051 100%);color:#fff;border-radius:18px;padding:35px 25px 30px;box-shadow:0 16px 40px #b51f3220}
-    .success:before,.success:after{content:"";position:absolute;border:1px solid #c6a56b30;border-radius:50%;width:230px;height:230px;pointer-events:none}
+    .brand{display:flex;align-items:center;justify-content:center}
+    .brand-logo{display:block;width:min(190px,52vw);height:92px;object-fit:contain;object-position:center}
+    .success{position:relative;overflow:hidden;text-align:center;background:linear-gradient(135deg,#102541 0%,#17466a 58%,#147f83 100%);color:#fff;border-radius:18px;padding:35px 25px 30px;box-shadow:0 16px 40px #b51f3220}
+    .success:before,.success:after{content:"";position:absolute;border:1px solid #53d1c630;border-radius:50%;width:230px;height:230px;pointer-events:none}
     .success:before{top:-155px;left:-105px}.success:after{right:-130px;bottom:-175px}
     .success-inner{position:relative;z-index:1}
-    .success-kicker{color:#d9c39d;font:700 10px Roboto,Arial,sans-serif;letter-spacing:3px;margin-bottom:16px}
-    .check{width:65px;height:65px;display:grid;place-items:center;margin:0 auto 15px;border:1px solid #c6a56b;border-radius:50%;background:#ffffff0d;color:#e4c990;font:400 34px Arial,sans-serif}
+    .success-kicker{color:#a9e8e3;font:700 10px Roboto,Arial,sans-serif;letter-spacing:3px;margin-bottom:16px}
+    .check{width:65px;height:65px;display:grid;place-items:center;margin:0 auto 15px;border:1px solid #66d5ca;border-radius:50%;background:#ffffff0d;color:#b8f0e9;font:400 34px Arial,sans-serif}
     .success h1{font-size:clamp(23px,4vw,30px);line-height:1.45;margin:0 0 8px;font-weight:700}
-    .success p{max-width:530px;margin:0 auto;color:#d4ddd7;font-size:15px;line-height:1.8}
-    .order-id{display:inline-flex;align-items:center;gap:7px;margin-top:19px;padding:8px 16px;border:1px solid #ffffff2b;border-radius:30px;background:#ffffff0b;color:#f2e5c9;font-size:14px;font-weight:600}
+    .success p{max-width:530px;margin:0 auto;color:#e0edf4;font-size:15px;line-height:1.8}
+    .order-id{display:inline-flex;align-items:center;gap:7px;margin-top:19px;padding:8px 16px;border:1px solid #ffffff2b;border-radius:30px;background:#ffffff0b;color:#d8f5f2;font-size:14px;font-weight:600}
     .order-id span{font-family:Roboto,Arial,sans-serif;letter-spacing:.4px}
-    .invoice{position:relative;margin-top:22px;padding:29px 31px 25px;background:var(--paper);border:1px solid #e9e6dc;border-radius:16px;box-shadow:0 12px 34px #2929290a}
+    .invoice{position:relative;margin-top:22px;padding:29px 31px 25px;background:var(--paper);border:1px solid #e3eaf0;border-radius:16px;box-shadow:0 12px 34px #2929290a}
     .invoice-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding-bottom:21px;border-bottom:1px solid var(--line)}
     .invoice-kicker{font:700 10px Roboto,Arial,sans-serif;letter-spacing:2px;color:var(--gold);margin-bottom:5px}
     .invoice h2{margin:0;color:var(--forest);font-size:25px;line-height:1.3}
     .invoice-sub{margin-top:5px;color:var(--muted);font-size:13px}
-    .invoice-meta{text-align:right;color:var(--muted);font:12px/1.8 Roboto,'Hind Siliguri',sans-serif}
+    .invoice-meta{text-align:right;color:var(--muted);font:12px/1.8 Roboto,'Noto Sans Bengali',sans-serif}
     .invoice-meta b{display:block;color:var(--forest);font-size:13px;overflow-wrap:anywhere}
     .section-title{display:flex;align-items:center;gap:9px;margin:22px 0 11px;color:var(--forest);font-size:17px;font-weight:700}
     .section-title:before{content:"";width:4px;height:19px;border-radius:4px;background:var(--gold)}
-    .customer{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:15px 16px;background:#faf9f6;border:1px solid #f0eee8;border-radius:10px;font-size:14px}
+    .customer{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;padding:15px 16px;background:#f7fafc;border:1px solid #e7eef4;border-radius:10px;font-size:14px}
     .customer p{margin:0;line-height:1.7;overflow-wrap:anywhere}
     .customer b{color:#58635b;font-weight:600}
     .customer .wide{grid-column:1/-1}
     .items-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
     .items{width:100%;border-collapse:collapse;font-size:14px;min-width:420px}
-    .items th{background:#f8f7f2;color:#69736c;font-size:12px;font-weight:600}
+    .items th{background:#f1f6fa;color:#69736c;font-size:12px;font-weight:600}
     .items th,.items td{padding:13px 11px;border-bottom:1px solid var(--line);text-align:left}
     .items tbody tr:last-child td{border-bottom:0;color:var(--ink);font-weight:600}
     .items th:last-child,.items td:last-child{text-align:right;white-space:nowrap}
@@ -52,20 +52,20 @@
     .total-row.grand{margin-top:8px;padding:13px 0 0;border-top:1px dashed #e5bfc5;color:var(--forest);font-size:17px;font-weight:700}
     .total-row.grand b{color:var(--forest);font:800 21px Roboto,Arial,sans-serif}
     .payment{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:21px}
-    .info-tile{padding:13px 14px;border:1px solid #eeeae0;border-radius:10px;background:#fcfbf8}
+    .info-tile{padding:13px 14px;border:1px solid #e4edf2;border-radius:10px;background:#f8fbfd}
     .info-label{display:block;margin-bottom:4px;color:#8a8d83;font-size:12px}
     .info-value{display:block;color:var(--forest);font-size:14px;font-weight:700;line-height:1.5}
     .cod-note{margin:17px 0 0;padding:12px 14px;border-radius:9px;background:var(--gold-soft);color:#655638;font-size:13px;line-height:1.7}
     .actions{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin-top:22px}
-    .actions button,.actions a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:11px 21px;border:1px solid transparent;border-radius:8px;font:700 15px 'Hind Siliguri',sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
+    .actions button,.actions a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:11px 21px;border:1px solid transparent;border-radius:8px;font:700 15px 'Noto Sans Bengali',sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
     .actions button:hover,.actions a:hover{transform:translateY(-2px)}
-    .print{background:linear-gradient(135deg,#b51f32,#d22e43);color:#fff}.print:hover{background:var(--forest-2)}
-    .home{background:#fff;color:var(--forest);border-color:#ead4d8!important}
+    .print{background:linear-gradient(135deg,#153c60,#168b83);color:#fff}.print:hover{background:var(--forest-2)}
+    .home{background:#fff;color:var(--forest);border-color:#d6e4ed!important}
     .footer-note{text-align:center;margin-top:22px;color:#8b918b;font-size:12px;line-height:1.8}
     .footer-note strong{color:var(--forest);font:700 11px Roboto,Arial,sans-serif;letter-spacing:1.6px}
     @media(max-width:560px){
       .page{width:min(100% - 20px,780px);padding:18px 0 38px}
-      .topbar{margin-bottom:15px}.brand{font-size:15px}
+      .topbar{margin-bottom:15px}.brand-logo{height:78px}
       .success{padding:29px 17px 25px;border-radius:14px}.success p{font-size:14px}
       .invoice{padding:22px 16px 20px;margin-top:14px;border-radius:13px}
       .invoice-head{gap:8px}.invoice h2{font-size:22px}.invoice-meta{font-size:11px}
@@ -88,7 +88,7 @@
 <body>
   <main class="page">
     <header class="topbar">
-      <div class="brand"><span class="brand-mark">D</span><span>DHAKAI ESSENCE</span></div>
+      <div class="brand"><img class="brand-logo" src="https://raw.githubusercontent.com/mrinvisibleking/dhakai-essence-jacket-order/main/Dhakai%20Essence%20Watermark.png" alt="DHAKAI ESSENCE logo"></div>
     </header>
 
     <section class="success">
