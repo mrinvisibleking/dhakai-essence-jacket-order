@@ -56,7 +56,7 @@ module.exports = async function handler(req, res) {
     customerName, phone, address, shippingArea, shippingFee, size, color,
     quantity, unitPrice, subtotal, total: subtotal + shippingFee,
     paymentMethod: "Cash on Delivery",
-    product: "Winter Half Zipper Style Jacket",
+    product: "GUESS Exclusive Jacket",
     createdAt: new Date().toISOString(),
     secret
   };
