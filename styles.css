@@ -716,3 +716,17 @@ body { overflow-x: clip; }
   outline: 3px solid #f4b942;
   outline-offset: 4px;
 }
+
+
+/* Delivery area selectable options */
+.shipping-choice-field{min-width:0;margin:0;padding:0;border:0}
+.shipping-choice-field legend{font-size:15px;font-weight:600;margin-bottom:9px}
+.shipping-choice-field em{color:var(--red);font-style:normal}
+.shipping-choice-options{display:flex;flex-wrap:wrap;gap:9px;margin-top:7px}
+.shipping-choice-options label{flex:1 1 125px;cursor:pointer}
+.shipping-choice-options input{position:absolute;opacity:0;pointer-events:none}
+.shipping-choice-options span{display:flex;align-items:center;justify-content:space-between;gap:7px;min-height:45px;padding:9px 11px;border:1px solid #d8d8d8;border-radius:4px;background:#fff;font-size:14px;font-weight:600;transition:.2s}
+.shipping-choice-options input:checked+span{border:2px solid #b51f32;background:#fff7f7;color:#a7192c;padding:8px 10px}
+.shipping-choice-options input:focus-visible+span{outline:3px solid #65c5e855;outline-offset:2px}
+.shipping-choice-options b{white-space:nowrap}
+@media(max-width:760px){.shipping-choice-field{grid-column:1/-1}}
