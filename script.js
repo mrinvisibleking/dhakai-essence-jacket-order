@@ -63,7 +63,7 @@ $('#order-form').addEventListener('submit', async (event) => {
     subtotal: PRICE * quantity,
     total: PRICE * quantity + shippingFee(),
     paymentMethod: 'Cash on Delivery',
-    product: 'Winter Half Zipper Style Jacket',
+    product: 'GUESS Exclusive Jacket',
     createdAt: new Date().toISOString()
   };
   button.disabled = true;
