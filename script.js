@@ -4,7 +4,8 @@ let galleryIndex = 0;
 const $ = (selector) => document.querySelector(selector);
 const money = (value) => `৳${new Intl.NumberFormat('bn-BD').format(value)}`;
 const selectedColor = () => document.querySelector('input[name="color"]:checked')?.value || 'Black';
-const shippingFee = () => $('#shipping').value === 'inside' ? 60 : 120;
+const selectedShipping = () => document.querySelector('input[name="shipping"]:checked')?.value || 'outside';
+const shippingFee = () => selectedShipping() === 'inside' ? 60 : 120;
 const galleryColors = ['Black', 'Red'];
 
 function showGallery(index) {
@@ -39,7 +40,7 @@ document.querySelectorAll('input[name="color"]').forEach((radio) => radio.addEve
 }));
 $('#minus').addEventListener('click', () => { quantity = Math.max(1, quantity - 1); updateTotals(); });
 $('#plus').addEventListener('click', () => { quantity = Math.min(20, quantity + 1); updateTotals(); });
-$('#shipping').addEventListener('change', updateTotals);
+document.querySelectorAll('input[name="shipping"]').forEach((radio) => radio.addEventListener('change', updateTotals));
 $('#year').textContent = new Date().getFullYear();
 
 $('#order-form').addEventListener('submit', async (event) => {
@@ -53,7 +54,7 @@ $('#order-form').addEventListener('submit', async (event) => {
     customerName: String(formData.get('customerName') || '').trim(),
     phone: String(formData.get('phone') || '').trim(),
     address: String(formData.get('address') || '').trim(),
-    shippingArea: formData.get('shipping') === 'inside' ? 'Inside Dhaka' : 'Outside Dhaka',
+    shippingArea: selectedShipping() === 'inside' ? 'Inside Dhaka' : 'Outside Dhaka',
     shippingFee: shippingFee(),
     size: formData.get('size'),
     color: selectedColor(),
