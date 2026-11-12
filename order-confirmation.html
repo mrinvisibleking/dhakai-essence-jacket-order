@@ -10,14 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--forest:#172b24;--forest-2:#244238;--gold:#c6a56b;--gold-soft:#f4eddf;--ink:#202722;--muted:#78817b;--line:#e9e8e2;--paper:#fff;--canvas:#f5f4ef;--green:#2d8055}
+    :root{--forest:#a7192c;--forest-2:#851426;--gold:#c6283d;--gold-soft:#fff0f1;--ink:#252525;--muted:#747474;--line:#ece7e8;--paper:#fff;--canvas:#f7f7f8;--green:#b51f32}
     *{box-sizing:border-box}
     body{margin:0;background:var(--canvas);color:var(--ink);font-family:'Hind Siliguri',sans-serif}
     .page{width:min(780px,calc(100% - 30px));margin:0 auto;padding:30px 0 58px}
     .topbar{display:flex;align-items:center;justify-content:center;margin-bottom:22px}
     .brand{display:flex;align-items:center;gap:11px;color:var(--forest);font:800 17px Roboto,Arial,sans-serif;letter-spacing:2.5px}
     .brand-mark{width:37px;height:37px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%;color:var(--gold);font:700 18px Georgia,serif}
-    .success{position:relative;overflow:hidden;text-align:center;background:var(--forest);color:#fff;border-radius:18px;padding:35px 25px 30px;box-shadow:0 16px 40px #172b241c}
+    .success{position:relative;overflow:hidden;text-align:center;background:linear-gradient(135deg,#9f1428 0%,#c6283d 58%,#df4051 100%);color:#fff;border-radius:18px;padding:35px 25px 30px;box-shadow:0 16px 40px #b51f3220}
     .success:before,.success:after{content:"";position:absolute;border:1px solid #c6a56b30;border-radius:50%;width:230px;height:230px;pointer-events:none}
     .success:before{top:-155px;left:-105px}.success:after{right:-130px;bottom:-175px}
     .success-inner{position:relative;z-index:1}
@@ -27,7 +27,7 @@
     .success p{max-width:530px;margin:0 auto;color:#d4ddd7;font-size:15px;line-height:1.8}
     .order-id{display:inline-flex;align-items:center;gap:7px;margin-top:19px;padding:8px 16px;border:1px solid #ffffff2b;border-radius:30px;background:#ffffff0b;color:#f2e5c9;font-size:14px;font-weight:600}
     .order-id span{font-family:Roboto,Arial,sans-serif;letter-spacing:.4px}
-    .invoice{position:relative;margin-top:22px;padding:29px 31px 25px;background:var(--paper);border:1px solid #e9e6dc;border-radius:16px;box-shadow:0 12px 34px #172b240a}
+    .invoice{position:relative;margin-top:22px;padding:29px 31px 25px;background:var(--paper);border:1px solid #e9e6dc;border-radius:16px;box-shadow:0 12px 34px #2929290a}
     .invoice-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding-bottom:21px;border-bottom:1px solid var(--line)}
     .invoice-kicker{font:700 10px Roboto,Arial,sans-serif;letter-spacing:2px;color:var(--gold);margin-bottom:5px}
     .invoice h2{margin:0;color:var(--forest);font-size:25px;line-height:1.3}
@@ -49,7 +49,7 @@
     .totals{width:min(310px,100%);margin:15px 0 0 auto}
     .total-row{display:flex;justify-content:space-between;gap:12px;padding:6px 0;color:#69736c;font-size:14px}
     .total-row b{color:var(--ink);font-weight:600;white-space:nowrap}
-    .total-row.grand{margin-top:8px;padding:13px 0 0;border-top:1px dashed #d9d6cb;color:var(--forest);font-size:17px;font-weight:700}
+    .total-row.grand{margin-top:8px;padding:13px 0 0;border-top:1px dashed #e5bfc5;color:var(--forest);font-size:17px;font-weight:700}
     .total-row.grand b{color:var(--forest);font:800 21px Roboto,Arial,sans-serif}
     .payment{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:21px}
     .info-tile{padding:13px 14px;border:1px solid #eeeae0;border-radius:10px;background:#fcfbf8}
@@ -59,8 +59,8 @@
     .actions{display:flex;justify-content:center;gap:11px;flex-wrap:wrap;margin-top:22px}
     .actions button,.actions a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:11px 21px;border:1px solid transparent;border-radius:8px;font:700 15px 'Hind Siliguri',sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
     .actions button:hover,.actions a:hover{transform:translateY(-2px)}
-    .print{background:var(--forest);color:#fff}.print:hover{background:var(--forest-2)}
-    .home{background:#fff;color:var(--forest);border-color:#dcded7!important}
+    .print{background:linear-gradient(135deg,#b51f32,#d22e43);color:#fff}.print:hover{background:var(--forest-2)}
+    .home{background:#fff;color:var(--forest);border-color:#ead4d8!important}
     .footer-note{text-align:center;margin-top:22px;color:#8b918b;font-size:12px;line-height:1.8}
     .footer-note strong{color:var(--forest);font:700 11px Roboto,Arial,sans-serif;letter-spacing:1.6px}
     @media(max-width:560px){
@@ -93,10 +93,10 @@
 
     <section class="success">
       <div class="success-inner">
-        <div class="success-kicker">ORDER CONFIRMATION PROCESSING</div>
+        <div class="success-kicker">ORDER RECEIVED</div>
         <div class="check" aria-hidden="true">✓</div>
-        <h1>ধন্যবাদ!</h1>
-        <p>অনুগ্রহ করে কিছুক্ষণ অপেক্ষা করুন আমাদের টিম শিঘ্রই আপনাকে ফোন করে অর্ডারটি কনফার্ম করবে। দয়া করে আপনার দেওয়া ফোন নম্বরটি সচল রাখুন।</p>
+        <h1>আপনার অর্ডারটি গ্রহণ করা হয়েছে!</h1>
+        <p>আমাদের টিম শীঘ্রই আপনাকে ফোন করে অর্ডারটি নিশ্চিত করবে। অনুগ্রহ করে আপনার দেওয়া ফোন নম্বরটি সচল রাখুন।</p>
         <div class="order-id">অর্ডার আইডি: <span id="order-id">—</span></div>
       </div>
     </section>
@@ -105,7 +105,7 @@
       <div class="invoice-head">
         <div>
           <div class="invoice-kicker"><h2>অর্ডার ইনভয়েস</h2></div>
-          <div class="invoice-sub">Dhakai Essence · Cash on Delivery</div>
+          <div class="invoice-sub">DHAKAI ESSENCE · GUESS EXCLUSIVE JACKET</div>
         </div>
         <div class="invoice-meta"><b id="invoice-id">—</b><span id="invoice-date">—</span></div>
       </div>
@@ -135,7 +135,7 @@
         <div class="info-tile"><span class="info-label">পেমেন্ট পদ্ধতি</span><span class="info-value">Cash on Delivery</span></div>
         <div class="info-tile"><span class="info-label">ডেলিভারি এলাকা</span><span class="info-value" id="shipping-area"></span></div>
       </div>
-      <p class="cod-note">পণ্য হাতে পাওয়ার পর ডেলিভারি প্রতিনিধিকে মূল্য পরিশোধ করবেন। অর্ডার সংক্রান্ত প্রয়োজনে আমাদের টিম আপনার দেওয়া ফোন নম্বরে যোগাযোগ করবে।</p>
+      <p class="cod-note">পণ্য হাতে পাওয়ার পর ডেলিভারি প্রতিনিধিকে মূল্য পরিশোধ করবেন। অর্ডার নিশ্চিত করতে আমাদের টিম আপনার দেওয়া ফোন নম্বরে যোগাযোগ করবে।</p>
     </section>
 
     <div class="actions">
@@ -164,6 +164,7 @@
       }
       const put=(id,value)=>document.getElementById(id).textContent=value ?? '';
       const money=v=>'৳'+new Intl.NumberFormat('bn-BD').format(Number(v)||0);
+      const colorLabels={Black:'Classic Black',Red:'Deep Maroon','Classic Black':'Classic Black','Deep Maroon':'Deep Maroon'};
       const date=new Date(o.createdAt);
       put('order-id',o.orderId);
       put('invoice-id','Invoice: '+o.orderId);
@@ -171,14 +172,14 @@
       put('customer-name',o.customerName);
       put('customer-phone',o.phone);
       put('customer-address',o.address);
-      put('product',o.product);
-      put('variant',o.size+' / '+o.color);
+      put('product','GUESS Exclusive Jacket');
+      put('variant',o.size+' / '+(colorLabels[o.color]||o.color));
       put('qty',new Intl.NumberFormat('bn-BD').format(o.quantity));
       put('line-total',money(o.subtotal));
       put('subtotal',money(o.subtotal));
       put('delivery',money(o.shippingFee));
       put('total',money(o.total));
-      put('shipping-area',o.shippingArea==='Inside Dhaka'?'ঢাকার ভিতরে':'ঢাকার বাইরে');
+      put('shipping-area',o.shippingArea==='Inside Dhaka'?'ঢাকার ভিতরে':'ঢাকার বাহিরে');
     })();
   </script>
 </body>
