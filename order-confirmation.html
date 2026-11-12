@@ -17,6 +17,7 @@
     .topbar{display:flex;align-items:center;justify-content:center;margin-bottom:22px}
     .brand{display:flex;align-items:center;justify-content:center}
     .brand-logo{display:block;width:min(190px,52vw);height:92px;object-fit:contain;object-position:center}
+    .invoice-print-brand{display:none;text-align:center;margin:0 auto 12px}.invoice-print-brand img{display:block;width:145px;height:76px;object-fit:contain;margin:0 auto}
     .success{position:relative;overflow:hidden;text-align:center;background:linear-gradient(135deg,#102541 0%,#17466a 58%,#147f83 100%);color:#fff;border-radius:18px;padding:35px 25px 30px;box-shadow:0 16px 40px #b51f3220}
     .success:before,.success:after{content:"";position:absolute;border:1px solid #53d1c630;border-radius:50%;width:230px;height:230px;pointer-events:none}
     .success:before{top:-155px;left:-105px}.success:after{right:-130px;bottom:-175px}
@@ -78,6 +79,7 @@
       body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
       .page{width:100%;max-width:none;margin:0;padding:0}
       .topbar,.success,.actions,.footer-note{display:none!important}
+      .invoice-print-brand{display:block!important}
       .invoice{margin:0;padding:18px 20px;border:1px solid #ddd;box-shadow:none;border-radius:0}
       .invoice-head{padding-top:0}
       .items-wrap{overflow:visible}
@@ -88,7 +90,7 @@
 <body>
   <main class="page">
     <header class="topbar">
-      <div class="brand"><img class="brand-logo" src="https://raw.githubusercontent.com/mrinvisibleking/dhakai-essence-jacket-order/main/Dhakai%20Essence%20Watermark.png" alt="DHAKAI ESSENCE logo"></div>
+      <div class="brand"><img class="brand-logo" src="/Dhakai%20Essence%20Watermark.png" alt="DHAKAI ESSENCE logo" loading="eager" decoding="sync"></div>
     </header>
 
     <section class="success">
@@ -102,6 +104,7 @@
     </section>
 
     <section class="invoice" id="invoice">
+      <div class="invoice-print-brand"><img src="/Dhakai%20Essence%20Watermark.png" alt="DHAKAI ESSENCE logo" loading="eager" decoding="sync"></div>
       <div class="invoice-head">
         <div>
           <div class="invoice-kicker"><h2>অর্ডার ইনভয়েস</h2></div>
