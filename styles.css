@@ -730,3 +730,9 @@ body { overflow-x: clip; }
 .shipping-choice-options input:focus-visible+span{outline:3px solid #65c5e855;outline-offset:2px}
 .shipping-choice-options b{white-space:nowrap}
 @media(max-width:760px){.shipping-choice-field{grid-column:1/-1}}
+
+
+/* Delivery time helper text */
+.shipping-option-copy{display:flex;flex-direction:column;gap:2px}
+.shipping-option-copy small{font-size:11px;font-weight:400;line-height:1.35;color:#68717d}
+.shipping-choice-options input:checked+span .shipping-option-copy small{color:#8f4a52}
