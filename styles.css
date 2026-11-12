@@ -815,3 +815,5 @@ body { overflow-x: clip; }
   .shipping-choice-options .shipping-option-copy small{font-size:10px}
   .shipping-choice-options label>span>b{font-size:12px;padding:4px 6px}
 }
+
+.order-contact-help{margin:13px auto 0;padding:11px 14px;text-align:center;background:#fff7f7;border:1px solid #f3d9dd;border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:3px;color:#6f5558;font-size:13px;line-height:1.5}.order-contact-help a{color:#b51f32;font-size:16px;font-weight:700;text-decoration:none;letter-spacing:.2px}.order-contact-help a:hover{text-decoration:underline}
