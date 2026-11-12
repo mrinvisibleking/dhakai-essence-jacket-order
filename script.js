@@ -5,11 +5,11 @@ const $ = (selector) => document.querySelector(selector);
 const money = (value) => `৳${new Intl.NumberFormat('bn-BD').format(value)}`;
 const selectedColor = () => document.querySelector('input[name="color"]:checked')?.value || 'Black';
 const shippingFee = () => $('#shipping').value === 'inside' ? 60 : 120;
-const galleryColors = ['Cream', 'Black', 'Red', 'Pastel Green'];
+const galleryColors = ['Black', 'Red'];
 
 function showGallery(index) {
   galleryIndex = (index + galleryColors.length) % galleryColors.length;
-  $('#gallery-track').style.transform = `translateX(-${galleryIndex * 25}%)`;
+  $('#gallery-track').style.transform = `translateX(-${galleryIndex * 50}%)`;
   document.querySelectorAll('#gallery-dots button').forEach((dot, i) => dot.classList.toggle('active', i === galleryIndex));
 }
 function updateTotals() {
