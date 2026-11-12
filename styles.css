@@ -576,3 +576,83 @@ body { overflow-x: clip; }
     transform: none;
   }
 }
+
+
+/* Prominent cash-on-delivery banner above the product gallery */
+.cod-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 19px 18px 17px;
+  text-align: center;
+  background: linear-gradient(110deg, #fff8ed 0%, #fffdf8 48%, #fff3e8 100%);
+  border-bottom: 1px solid #f1dfc9;
+}
+.cod-banner::before,
+.cod-banner::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(181, 31, 50, .09);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.cod-banner::before { left: -75px; top: -92px; }
+.cod-banner::after { right: -75px; bottom: -105px; }
+.cod-banner-inner {
+  width: min(100%, 900px);
+  margin: 0 auto;
+}
+.cod-banner-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  color: #a7192c;
+  font-size: clamp(22px, 2.6vw, 31px);
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: .1px;
+}
+.cod-banner-title span {
+  color: #e69a16;
+  font-family: Arial, sans-serif;
+  font-size: .9em;
+  filter: drop-shadow(0 2px 3px rgba(230, 154, 22, .18));
+}
+.cod-banner-inner > p {
+  margin: 6px 0 0;
+  color: #263342;
+  font-size: clamp(15px, 1.7vw, 19px);
+  font-weight: 700;
+  line-height: 1.5;
+}
+.cod-banner-inner > .cod-banner-description {
+  max-width: 760px;
+  margin: 3px auto 0;
+  color: #626b75;
+  font-size: clamp(13px, 1.35vw, 15px);
+  font-weight: 500;
+  line-height: 1.65;
+}
+@media (max-width: 760px) {
+  .cod-banner {
+    padding: 15px 15px 14px;
+  }
+  .cod-banner-title {
+    gap: 8px;
+    font-size: clamp(21px, 6vw, 26px);
+  }
+  .cod-banner-inner > p {
+    margin-top: 5px;
+    font-size: 15px;
+  }
+  .cod-banner-inner > .cod-banner-description {
+    max-width: 390px;
+    margin-top: 2px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+}
