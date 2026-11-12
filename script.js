@@ -3,9 +3,9 @@ let quantity = 1;
 let galleryIndex = 0;
 const $ = (selector) => document.querySelector(selector);
 const money = (value) => `৳${new Intl.NumberFormat('bn-BD').format(value)}`;
-const selectedColor = () => document.querySelector('input[name="color"]:checked')?.value || 'Classic Black';
+const selectedColor = () => document.querySelector('input[name="color"]:checked')?.value || 'Black';
 const shippingFee = () => $('#shipping').value === 'inside' ? 60 : 120;
-const galleryColors = ['Cream', 'Classic Black', 'Deep Maroon', 'Pastel Green'];
+const galleryColors = ['Cream', 'Black', 'Red', 'Pastel Green'];
 
 function showGallery(index) {
   galleryIndex = (index + galleryColors.length) % galleryColors.length;
@@ -16,7 +16,8 @@ function updateTotals() {
   const subtotal = PRICE * quantity;
   const total = subtotal + shippingFee();
   $('#quantity').textContent = quantity;
-  $('#summary-product').textContent = `Jacket Model - 1 (${selectedColor()}) × ${quantity}`;
+  const colorLabels = { Black: 'Classic Black', Red: 'Deep Maroon' };
+  $('#summary-product').textContent = `Jacket Model - 1 (${colorLabels[selectedColor()] || selectedColor()}) × ${quantity}`;
   $('#subtotal').textContent = money(subtotal);
   $('#subtotal2').textContent = money(subtotal);
   $('#shipping-cost').textContent = money(shippingFee());
