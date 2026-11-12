@@ -98,7 +98,7 @@
           <label>আপনার নাম <em>*</em><input name="customerName" required autocomplete="name" placeholder="আপনার সম্পূর্ণ নাম" /></label>
           <label>ফোন নাম্বার <em>*</em><input name="phone" required inputmode="tel" autocomplete="tel" pattern="[0-9+()\\- ]{8,20}" placeholder="01XXXXXXXXX" /></label>
           <label class="full">সম্পূর্ণ ঠিকানা <em>*</em><textarea name="address" required rows="3" autocomplete="street-address" placeholder="বাসা/রোড, এলাকা, থানা, জেলা"></textarea></label>
-          <label>ডেলিভারি এলাকা <em>*</em><select name="shipping" id="shipping" required><option value="outside">ঢাকার বাইরে — ৳১২০</option><option value="inside">ঢাকার ভিতরে — ৳৬০</option></select></label>
+          <fieldset class="shipping-choice-field"><legend>ডেলিভারি এলাকা <em>*</em></legend><div class="shipping-choice-options"><label><input type="radio" name="shipping" value="outside" checked required><span>ঢাকার বাইরে <b>৳১২০</b></span></label><label><input type="radio" name="shipping" value="inside"><span>ঢাকার ভিতরে <b>৳৬০</b></span></label></div></fieldset>
           <fieldset class="size-choice-field"><legend>সাইজ নির্বাচন করুন <em>*</em></legend><div class="size-choice-options"><label><input type="radio" name="size" value="M" required><span>M</span></label><label><input type="radio" name="size" value="L"><span>L</span></label><label><input type="radio" name="size" value="XL"><span>XL</span></label><label><input type="radio" name="size" value="XXL"><span>XXL</span></label></div></fieldset>
         </div>
         <div class="color-picker">
