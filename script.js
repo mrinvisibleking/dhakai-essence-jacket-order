@@ -83,6 +83,10 @@ $('#order-form').addEventListener('submit', async (event) => {
       throw new Error(result?.message || 'অর্ডার পাঠানো যায়নি। আবার চেষ্টা করুন।');
     }
     order.orderId = result.orderId;
+    // Count a Lead only after the order API confirms successful submission.
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead');
+    }
     order.createdAt = new Date().toISOString();
     try {
       sessionStorage.setItem('dhakaiEssenceLastOrder', JSON.stringify(order));
